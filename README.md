@@ -1,7 +1,7 @@
-# AWS EventBridge Filter Prototype
+# AWS EventBridge Rule Prototype
 
 
-This prototype use EventBridge to filter ATM transactions and depending on the EventBridge rule put the transaction into different Dynamodb tables.  
+This prototype use EventBridge to filter ATM transactions and depending on the EventBridge rule that is invoked it will put the transaction into different Dynamodb tables.  
 
 ![Alt text](docs/images/architecture.svg)
 
@@ -14,7 +14,7 @@ The Terraform creates:
 
 
 
-Once the Terraform is applied, you send events to EventBridge using the `./scripts/produce-events.sh` script and you use   `./scripts/verify-events.sh` to verify the results in the DynamoDb tables.  
+Once the Terraform is applied, you send events to EventBridge using the `./scripts/produce-events.sh` script.  You use   `./scripts/verify-events.sh` to verify the results in the DynamoDb tables.  
 
 ## Setup Prerequisites
 
@@ -31,8 +31,7 @@ Once the Terraform is applied, you send events to EventBridge using the `./scrip
     $ terraform init
     $ terraform apply
     ```
-2. Run the scripts 
-3. Generate Event data and Verify the results
+2. Generate Event data 
     ``` bash
     $ cd scripts
     $ ./produce-events.zsh
@@ -40,6 +39,7 @@ Once the Terraform is applied, you send events to EventBridge using the `./scrip
     "StatusCode": 200,
     "ExecutedVersion": "$LATEST"
     }
+3. Verify the event results
     $ ./verify-events.zsh 
     Success! ApprovedTransactions count is 2
     Success! NewYorkTransactions count is 2
