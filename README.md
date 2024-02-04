@@ -10,11 +10,8 @@ The Terraform creates:
 - Three Lambda functions that consume ATM transaction events and send them to the one of the three DynamoDB table
 - Three DynamoDB tables to store the ATM transaction events
 - Three rules on the default event bus that invoke one of the three consumer Lambda functions based on the ATM transaction details
-- A file called `./scripts/variables.sh` which is used by the shell scripts which product events and test the results
+- A file called `./scripts/variables.sh` which is created by Terraform and creates the variables used by the scripts
 
-
-
-Once the Terraform is applied, you send events to EventBridge using the `./scripts/produce-events.sh` script.  You use   `./scripts/verify-events.sh` to verify the results in the DynamoDb tables.  
 
 ## Setup Prerequisites
 
@@ -39,7 +36,9 @@ Once the Terraform is applied, you send events to EventBridge using the `./scrip
     "StatusCode": 200,
     "ExecutedVersion": "$LATEST"
     }
+    ```
 3. Verify the event results
+    ``` bash
     $ ./verify-events.zsh 
     Success! ApprovedTransactions count is 2
     Success! NewYorkTransactions count is 2
