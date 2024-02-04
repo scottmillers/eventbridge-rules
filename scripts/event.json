@@ -1,0 +1,20 @@
+ {
+  "version": "0",
+  "id": "4b57464d-c6c4-c86e-1022-d79ab4868e0c",
+  "detail-type": "transaction",
+  "source": "custom.myATMapp",
+  "account": "588459062833",
+  "time": "2023-12-22T06:02:22Z",
+  "region": "us-east-1",
+  "resources": [],
+  "detail": {
+      "action": "withdrawal",
+      "location": "MA-BOS-01",
+      "amount": 300,
+      "result": "approved",
+      "transactionId": "123456",
+      "cardPresent": true,
+      "partnerBank": "Example Bank",
+      "remainingFunds": 722.34
+  }
+}

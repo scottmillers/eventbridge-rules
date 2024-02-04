@@ -1,0 +1,15 @@
+{
+  "name": "consumer2",
+  "version": "1.0.0",
+  "description": "Write New York Transactions to the DynamoDB New York Transactions Table",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Scott Miller",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.481.0",
+    "@aws-sdk/lib-dynamodb": "^3.481.0"
+  }
+}
